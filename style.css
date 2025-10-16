@@ -308,7 +308,10 @@ footer {
         font-weight: 600;
         color: var(--accent-color);
         margin-right: 10px;
-        font-size: 0.9rem;
+        font-size: 0.75rem;
+    }
+    .achievements-table td{
+        font-size: 0.75rem;
     }
 }
 
