@@ -23,6 +23,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
+    word-break: break-word;
 }
 
 .container {
@@ -37,6 +38,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     color: var(--text-color);
     margin-bottom: 0.5em;
+    word-break: break-word;
 }
 
 h1 { font-size: 2.8rem; }
@@ -151,6 +153,7 @@ section {
     border-radius: 8px;
     border: 1px solid var(--border-color);
     font-weight: 400;
+    word-break: break-word;
 }
 
 .achievements-table {
@@ -223,6 +226,15 @@ section {
 }
 
 /* Contact Form */
+.contact-container {
+    display: flex;
+    gap: 40px;
+}
+
+.contact-info, .contact-form-container {
+    flex: 1;
+}
+
 .contact-form label {
     display: block;
     margin-bottom: 8px;
@@ -282,3 +294,59 @@ footer {
     margin-top: 40px;
     border-top: 1px solid var(--border-color);
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 0 15px;
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.3rem; }
+
+    header ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .achievements-table {
+        border: none;
+    }
+
+    .achievements-table thead {
+        display: none;
+    }
+
+    .achievements-table tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 20px;
+        background: var(--card-color);
+    }
+
+    .achievements-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border: none;
+        text-align: left;
+    }
+
+    .achievements-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--accent-color);
+        margin-right: 10px;
+    }
+}
+
