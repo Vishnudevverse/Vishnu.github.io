@@ -7,17 +7,15 @@
     --card-color: #1E1E1E;
     --text-color: #EAEAEA;
     --text-secondary: #B0B0B0;
-    --accent-color: #00E5FF; /* Electric Blue/Teal */
-    --accent-gradient: linear-gradient(45deg, #00E5FF, #FF00C8); /* Teal to Magenta */
+    --accent-color: #00E5FF;
+    --accent-gradient: linear-gradient(45deg, #00E5FF, #FF00C8);
     --shadow-color: rgba(0, 0, 0, 0.5);
     --border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* General Body & Typography */
 body {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    line-height: 1.7;
+    font: 300 1.7 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--bg-color);
@@ -56,18 +54,16 @@ a {
     transition: color 0.3s ease;
 }
 
-a:hover {
-    color: white;
-}
+a:hover { color: white; }
 
-/* Header & Navigation (Glassmorphism) */
+/* Header & Navigation */
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
     padding: 1rem 0;
-    background: rgba(30, 30, 30, 0.75); /* Semi-transparent background */
-    backdrop-filter: blur(10px); /* Frosted glass effect */
+    background: rgba(30, 30, 30, 0.75);
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border-color);
     transition: background 0.3s ease;
@@ -94,7 +90,7 @@ header .nav-link {
 
 header .nav-link:hover {
     background-color: var(--accent-color);
-    color: #000; /* Black text for high contrast on accent background */
+    color: #000;
 }
 
 header .nav-link.active {
@@ -103,14 +99,10 @@ header .nav-link.active {
     border-bottom: 2px solid var(--accent-color);
 }
 
-header .nav-link.active:hover {
-    color: #000; /* Ensure text is visible on hover for active link */
-}
+header .nav-link.active:hover { color: #000; }
 
-/* Main Content Area */
-main {
-    padding: 40px 0;
-}
+/* Main Content */
+main { padding: 40px 0; }
 
 section {
     background: var(--card-color);
@@ -122,10 +114,8 @@ section {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Home Page Specifics */
-.home-intro {
-    text-align: center;
-}
+/* Home Page */
+.home-intro { text-align: center; }
 
 .profile-image {
     width: 160px;
@@ -134,11 +124,11 @@ section {
     object-fit: cover;
     margin-bottom: 25px;
     border: 5px solid transparent;
-    background: var(--accent-gradient) border-box; /* Gradient border */
+    background: var(--accent-gradient) border-box;
     box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
 }
 
-/* About Page: Skills List & Achievements Table */
+/* About Page */
 .skills-list {
     list-style-type: none;
     padding-left: 0;
@@ -169,7 +159,7 @@ section {
 }
 
 .achievements-table th {
-    background-color: rgba(0, 229, 255, 0.1); /* Accent color tint */
+    background-color: rgba(0, 229, 255, 0.1);
     color: var(--accent-color);
     font-weight: 600;
 }
@@ -204,8 +194,7 @@ section {
 
 .project-card h3 {
     color: var(--accent-color);
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
 }
 
 .project-card a {
@@ -226,14 +215,8 @@ section {
 }
 
 /* Contact Form */
-.contact-container {
-    display: flex;
-    gap: 40px;
-}
-
-.contact-info, .contact-form-container {
-    flex: 1;
-}
+.contact-container { display: flex; gap: 40px; }
+.contact-info, .contact-form-container { flex: 1; }
 
 .contact-form label {
     display: block;
@@ -242,8 +225,7 @@ section {
     color: var(--text-secondary);
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
+.contact-form input,
 .contact-form textarea {
     width: 100%;
     padding: 15px;
@@ -258,8 +240,7 @@ section {
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.contact-form input[type="text"]:focus,
-.contact-form input[type="email"]:focus,
+.contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--accent-color);
@@ -297,33 +278,15 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        width: 90%;
-        padding: 0 15px;
-    }
-
+    .container { width: 90%; padding: 0 15px; }
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.3rem; }
+    header ul { flex-direction: column; gap: 15px; align-items: center; }
+    .contact-container { flex-direction: column; }
 
-    header ul {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .contact-container {
-        flex-direction: column;
-    }
-
-    .achievements-table {
-        border: none;
-    }
-
-    .achievements-table thead {
-        display: none;
-    }
-
+    .achievements-table { border: none; }
+    .achievements-table thead { display: none; }
     .achievements-table tr {
         display: flex;
         flex-direction: column;
@@ -333,7 +296,6 @@ footer {
         padding: 20px;
         background: var(--card-color);
     }
-
     .achievements-table td {
         display: flex;
         justify-content: space-between;
@@ -341,12 +303,12 @@ footer {
         border: none;
         text-align: left;
     }
-
     .achievements-table td::before {
         content: attr(data-label);
         font-weight: 600;
         color: var(--accent-color);
         margin-right: 10px;
+        font-size: 0.9rem;
     }
 }
 
