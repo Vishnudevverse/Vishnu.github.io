@@ -279,8 +279,8 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .container { width: 90%; padding: 0 15px; }
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.8rem; }
+    h1 { font-size: 1.7rem; }
+    h2 { font-size: 1.6rem; }
     h3 { font-size: 1.3rem; }
     header ul { flex-direction: column; gap: 15px; align-items: center; }
     .contact-container { flex-direction: column; }
